@@ -4,26 +4,26 @@ import "../styles/global.css";
 const services = [
   {
     number: "01",
-    name: "Brand worlds",
-    detail: "Identity, strategy & direction",
+    name: "Hair services",
+    detail: "Service price list",
     className: "service-card--lilac",
   },
   {
     number: "02",
-    name: "Digital places",
-    detail: "Websites made to feel like you",
+    name: "Wig Services",
+    detail: "Service price list",
     className: "service-card--peach",
   },
   {
     number: "03",
-    name: "Good stories",
-    detail: "Words, images & all the in-between",
+    name: "Bridal collection",
+    detail: "Styled with care, for your special day",
     className: "service-card--blue",
   },
   {
     number: "04",
-    name: "The full picture",
-    detail: "A thoughtful creative partnership",
+    name: "Hair collection",
+    detail: "Beautiful hair for your big day",
     className: "service-card--yellow",
   },
 ];
@@ -31,33 +31,43 @@ const services = [
 const gallery = [
   {
     image:
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85",
-    alt: "Sunlit living room with warm natural textures",
+      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=85",
+    alt: "Soft, glossy brunette hair styled in loose waves",
     className: "gallery-item--one",
+    title: "Soft shape",
+    detail: "Cut & finish",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=900&q=85",
-    alt: "Quiet still life of flowers and home objects",
+      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=85",
+    alt: "Portrait with warm, dimensional caramel tones",
     className: "gallery-item--two",
+    title: "Golden hour",
+    detail: "Balayage",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85",
-    alt: "Modern architecture framed by soft afternoon light",
+      "https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=900&q=85",
+    alt: "Natural curls with defined shape and movement",
     className: "gallery-item--three",
+    title: "All the texture",
+    detail: "Curl shaping",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85",
-    alt: "Calm contemporary interior with sculptural furniture",
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=85",
+    alt: "A fresh, effortless style with face-framing layers",
     className: "gallery-item--four",
+    title: "A little lighter",
+    detail: "Layers & tone",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85",
-    alt: "Minimal home interior with a warm neutral palette",
+      "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=85",
+    alt: "Editorial beauty look with a polished, modern finish",
     className: "gallery-item--five",
+    title: "The occasion",
+    detail: "Event styling",
   },
 ];
 ---
@@ -67,22 +77,28 @@ const gallery = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
     <meta
       name="description"
-      content="Calume is an independent creative studio for thoughtful brands and digital places."
+      content="Calume is an independent hair stylist creating thoughtful cuts, personal colour and beautiful occasion hair."
     />
     <meta name="theme-color" content="#f8f7f3" />
-    <title>Calume — Creative studio</title>
+    <title>Calume — Hair artist & stylist</title>
   </head>
   <body>
     <header class="site-header">
       <a class="wordmark" href="#top" aria-label="Calume home">Calume<span>®</span></a>
       <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
-        <a href="#services">What we do</a>
-        <a href="#gallery">Selected work</a>
-        <a href="#contact">Say hello</a>
+        <a href="#services">Hair services</a>
+        <a href="#gallery">My work</a>
+        <a href="#contact">About & booking</a>
       </nav>
-      <a class="header-cta" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+      <a class="header-cta" href="#contact">Book a visit <span aria-hidden="true">↗</span></a>
       <button
         class="menu-toggle"
         type="button"
@@ -96,94 +112,110 @@ const gallery = [
     </header>
 
     <main id="top">
-      <section class="hero" aria-label="Introducing Calume">
+      <section class="hero" aria-label="Calume hair stylist">
         <img
           class="hero-image"
-          src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2200&q=90"
-          alt="A sunlit, considered living space"
+          src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=2200&q=90"
+          alt="A beautiful, softly styled brunette look"
           fetchpriority="high"
         />
         <div class="hero-shade"></div>
-        <div class="hero-copy">
-          <p class="eyebrow hero-eyebrow"><span></span> Independent creative studio</p>
-          <h1>Make room<br />for <em>feeling.</em></h1>
+        <div class="hero-copy" data-reveal="hero">
+          <p class="eyebrow hero-eyebrow"><span></span> Independent hair artist · cut & colour</p>
+          <h1>Hair that feels<br /><em>like you.</em></h1>
           <div class="hero-bottom">
-            <p>We build thoughtful brands and digital places for people with something good to put into the world.</p>
-            <a class="round-link hero-play" href="#gallery" aria-label="Explore selected work">
+            <p>Thoughtful cuts, lived-in colour and feel-good hair for wherever life takes you.</p>
+            <a class="round-link hero-play" href="#gallery" aria-label="Explore my work">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="m9 6 9 6-9 6V6Z" fill="currentColor" />
+                <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.5" />
               </svg>
             </a>
           </div>
         </div>
-        <span class="hero-caption">A little more human, by design.</span>
+        <span class="hero-caption">Good hair, good energy, always.</span>
       </section>
 
-      <section class="services section-wrap" id="services">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow"><span></span> A few good things</p>
-            <h2>Small studio.<br /><em>Big picture.</em></h2>
+      <section class="services" id="services">
+        <div class="services-inner">
+          <div class="section-heading services-heading" data-reveal>
+            <div>
+              <p class="eyebrow"><span></span> What I do</p>
+              <h2>Good hair,<br /><em>your way.</em></h2>
+            </div>
+            <p class="section-intro">
+              Thoughtful cuts, personal colour, and feel-good styling shaped around you.
+            </p>
           </div>
-          <p class="section-intro">
-            From the first little spark to the final finishing touch, we bring the right people and ideas together.
-          </p>
-        </div>
-        <div class="service-grid">
-          {services.map((service) => (
-            <a class={`service-card ${service.className}`} href="#contact">
-              <span class="service-number">{service.number}</span>
-              <span class="service-arrow" aria-hidden="true">↗</span>
-              <span class="service-copy">
-                <span class="service-title">{service.name}</span>
-                <span class="service-detail">{service.detail}</span>
-              </span>
-            </a>
-          ))}
+          <div class="service-grid">
+            <div class="service-stack service-stack--left">
+              {[services[0], services[2]].map((service) => (
+                <a class={`service-card ${service.className}`} href="#contact" data-reveal style={`--reveal-delay: ${Number(service.number) * 90}ms`}>
+                  <span class="service-number">{service.number}</span>
+                  <span class="service-arrow" aria-hidden="true">↗</span>
+                  <span class="service-copy">
+                    <span class="service-title">{service.name}</span>
+                    <span class="service-detail">{service.detail}</span>
+                  </span>
+                </a>
+              ))}
+            </div>
+            <div class="service-stack service-stack--right">
+              {[services[1], services[3]].map((service) => (
+                <a class={`service-card ${service.className}`} href="#contact" data-reveal style={`--reveal-delay: ${Number(service.number) * 90}ms`}>
+                  <span class="service-number">{service.number}</span>
+                  <span class="service-arrow" aria-hidden="true">↗</span>
+                  <span class="service-copy">
+                    <span class="service-title">{service.name}</span>
+                    <span class="service-detail">{service.detail}</span>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
       <section class="gallery-section" id="gallery">
-        <div class="section-wrap gallery-heading">
+        <div class="section-wrap gallery-heading" data-reveal>
           <div>
-            <p class="eyebrow"><span></span> Out in the world</p>
-            <h2>A few things<br /><em>we’ve made.</em></h2>
+            <p class="eyebrow"><span></span> A little hair inspiration</p>
+            <h2>Made with care.<br /><em>Worn with joy.</em></h2>
           </div>
           <div class="gallery-controls" aria-label="Gallery controls">
             <button class="gallery-control" type="button" data-direction="-1" aria-label="Scroll gallery left">←</button>
             <button class="gallery-control" type="button" data-direction="1" aria-label="Scroll gallery right">→</button>
           </div>
         </div>
-        <div class="gallery-track" aria-label="Selected studio work">
+        <div class="gallery-track" aria-label="Selected hair styling work">
           {gallery.map((item, index) => (
-            <figure class={`gallery-item ${item.className}`}>
+            <figure class={`gallery-item ${item.className}`} data-reveal style={`--reveal-delay: ${index * 70}ms`}>
               <img src={item.image} alt={item.alt} loading="lazy" />
-              <figcaption><span>Selected work</span><span>0{index + 1}</span></figcaption>
+              <figcaption><span>{item.title} <i>· {item.detail}</i></span><span>0{index + 1}</span></figcaption>
             </figure>
           ))}
         </div>
-        <p class="gallery-hint section-wrap">A little scroll goes a long way <span aria-hidden="true">⟶</span></p>
+        <p class="gallery-hint section-wrap">Scroll for a little more inspiration <span aria-hidden="true">⟶</span></p>
       </section>
 
       <section class="contact section-wrap" id="contact">
-        <div class="contact-image-wrap">
+        <div class="contact-image-wrap" data-reveal>
           <img
             class="contact-image"
             src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1100&q=85"
-            alt="Portrait of a woman in soft natural light"
+            alt="A relaxed portrait in warm, natural light"
             loading="lazy"
           />
-          <span class="image-note">Good things start with a hello.</span>
+          <span class="image-note">Come as you are. Leave feeling lovely.</span>
         </div>
-        <div class="contact-content">
-          <p class="eyebrow"><span></span> Your turn</p>
-          <h2>Let’s start<br />your <em>project.</em></h2>
-          <p class="contact-intro">Got a little idea, a big ambition, or just a feeling? We’d love to hear about it.</p>
+        <div class="contact-content" data-reveal>
+          <p class="eyebrow"><span></span> A little time for you</p>
+          <h2>Your next<br />good hair <em>day.</em></h2>
+          <p class="contact-intro">Tell me what your hair is dreaming of. I’ll be in touch to find a time that works.</p>
           <form class="contact-form" action="mailto:hello@calume.studio" method="post" enctype="text/plain">
             <div class="form-row">
               <label>
                 <span>Your name</span>
-                <input type="text" name="name" placeholder="How should we call you?" required />
+                <input type="text" name="name" placeholder="How should I call you?" required />
               </label>
               <label>
                 <span>Email address</span>
@@ -191,32 +223,31 @@ const gallery = [
               </label>
             </div>
             <label>
-              <span>What are you thinking?</span>
+              <span>What would you love?</span>
               <select name="project" required>
-                <option value="" disabled selected>Choose a starting point</option>
-                <option>Brand identity</option>
-                <option>Website or digital experience</option>
-                <option>Creative partnership</option>
-                <option>A bit of everything</option>
+                <option value="" disabled selected>Choose a hair service</option>
+                <option>Cut & finish</option>
+                <option>Colour</option>
+                <option>Curl consultation</option>
+                <option>Bridal or occasion styling</option>
               </select>
             </label>
             <label>
-              <span>A little more about it</span>
-              <textarea name="message" rows="3" placeholder="The early thoughts, the big dreams, the little details..." required></textarea>
+              <span>Your hair story</span>
+              <textarea name="message" rows="3" placeholder="Anything you’d like me to know? Your hopes, your hair history, all welcome." required></textarea>
             </label>
-            <button class="submit-button" type="submit">Send a little hello <span aria-hidden="true">↗</span></button>
-            <p class="form-note">No pressure, no pitch deck. Just a real conversation.</p>
+            <button class="submit-button" type="submit">Ask about an appointment <span aria-hidden="true">↗</span></button>
+            <p class="form-note">No pressure. Just a friendly first chat about your hair.</p>
           </form>
         </div>
       </section>
-    </main>
-
     <footer class="site-footer section-wrap">
       <a class="wordmark" href="#top">Calume<span>®</span></a>
-      <p>Good work, with good people.</p>
-      <a href="mailto:hello@calume.studio">hello@calume.studio <span aria-hidden="true">↗</span></a>
+      <p>Good hair, and a little time for you.</p>
+      <a href="mailto:hello@calume.studio">Say hello <span aria-hidden="true">↗</span></a>
       <span class="copyright">© Calume Studio 2026</span>
     </footer>
+    </main>
   </body>
 </html>
 
@@ -273,4 +304,22 @@ const gallery = [
   window.addEventListener("resize", scheduleContactParallax);
   reducedMotion.addEventListener("change", scheduleContactParallax);
   scheduleContactParallax();
+
+  if (!reducedMotion.matches && "IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-revealed");
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -35px 0px" },
+    );
+
+    document.querySelectorAll<HTMLElement>("[data-reveal]").forEach((element) => {
+      element.classList.add("reveal-pending");
+      revealObserver.observe(element);
+    });
+  }
 </script>
