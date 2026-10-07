@@ -1,0 +1,276 @@
+---
+import "../styles/global.css";
+
+const services = [
+  {
+    number: "01",
+    name: "Brand worlds",
+    detail: "Identity, strategy & direction",
+    className: "service-card--lilac",
+  },
+  {
+    number: "02",
+    name: "Digital places",
+    detail: "Websites made to feel like you",
+    className: "service-card--peach",
+  },
+  {
+    number: "03",
+    name: "Good stories",
+    detail: "Words, images & all the in-between",
+    className: "service-card--blue",
+  },
+  {
+    number: "04",
+    name: "The full picture",
+    detail: "A thoughtful creative partnership",
+    className: "service-card--yellow",
+  },
+];
+
+const gallery = [
+  {
+    image:
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85",
+    alt: "Sunlit living room with warm natural textures",
+    className: "gallery-item--one",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=900&q=85",
+    alt: "Quiet still life of flowers and home objects",
+    className: "gallery-item--two",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85",
+    alt: "Modern architecture framed by soft afternoon light",
+    className: "gallery-item--three",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85",
+    alt: "Calm contemporary interior with sculptural furniture",
+    className: "gallery-item--four",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85",
+    alt: "Minimal home interior with a warm neutral palette",
+    className: "gallery-item--five",
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Calume is an independent creative studio for thoughtful brands and digital places."
+    />
+    <meta name="theme-color" content="#f8f7f3" />
+    <title>Calume — Creative studio</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="Calume home">Calume<span>®</span></a>
+      <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+        <a href="#services">What we do</a>
+        <a href="#gallery">Selected work</a>
+        <a href="#contact">Say hello</a>
+      </nav>
+      <a class="header-cta" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+      >
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="Introducing Calume">
+        <img
+          class="hero-image"
+          src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2200&q=90"
+          alt="A sunlit, considered living space"
+          fetchpriority="high"
+        />
+        <div class="hero-shade"></div>
+        <div class="hero-copy">
+          <p class="eyebrow hero-eyebrow"><span></span> Independent creative studio</p>
+          <h1>Make room<br />for <em>feeling.</em></h1>
+          <div class="hero-bottom">
+            <p>We build thoughtful brands and digital places for people with something good to put into the world.</p>
+            <a class="round-link hero-play" href="#gallery" aria-label="Explore selected work">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="m9 6 9 6-9 6V6Z" fill="currentColor" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <span class="hero-caption">A little more human, by design.</span>
+      </section>
+
+      <section class="services section-wrap" id="services">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span></span> A few good things</p>
+            <h2>Small studio.<br /><em>Big picture.</em></h2>
+          </div>
+          <p class="section-intro">
+            From the first little spark to the final finishing touch, we bring the right people and ideas together.
+          </p>
+        </div>
+        <div class="service-grid">
+          {services.map((service) => (
+            <a class={`service-card ${service.className}`} href="#contact">
+              <span class="service-number">{service.number}</span>
+              <span class="service-arrow" aria-hidden="true">↗</span>
+              <span class="service-copy">
+                <span class="service-title">{service.name}</span>
+                <span class="service-detail">{service.detail}</span>
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section class="gallery-section" id="gallery">
+        <div class="section-wrap gallery-heading">
+          <div>
+            <p class="eyebrow"><span></span> Out in the world</p>
+            <h2>A few things<br /><em>we’ve made.</em></h2>
+          </div>
+          <div class="gallery-controls" aria-label="Gallery controls">
+            <button class="gallery-control" type="button" data-direction="-1" aria-label="Scroll gallery left">←</button>
+            <button class="gallery-control" type="button" data-direction="1" aria-label="Scroll gallery right">→</button>
+          </div>
+        </div>
+        <div class="gallery-track" aria-label="Selected studio work">
+          {gallery.map((item, index) => (
+            <figure class={`gallery-item ${item.className}`}>
+              <img src={item.image} alt={item.alt} loading="lazy" />
+              <figcaption><span>Selected work</span><span>0{index + 1}</span></figcaption>
+            </figure>
+          ))}
+        </div>
+        <p class="gallery-hint section-wrap">A little scroll goes a long way <span aria-hidden="true">⟶</span></p>
+      </section>
+
+      <section class="contact section-wrap" id="contact">
+        <div class="contact-image-wrap">
+          <img
+            class="contact-image"
+            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1100&q=85"
+            alt="Portrait of a woman in soft natural light"
+            loading="lazy"
+          />
+          <span class="image-note">Good things start with a hello.</span>
+        </div>
+        <div class="contact-content">
+          <p class="eyebrow"><span></span> Your turn</p>
+          <h2>Let’s start<br />your <em>project.</em></h2>
+          <p class="contact-intro">Got a little idea, a big ambition, or just a feeling? We’d love to hear about it.</p>
+          <form class="contact-form" action="mailto:hello@calume.studio" method="post" enctype="text/plain">
+            <div class="form-row">
+              <label>
+                <span>Your name</span>
+                <input type="text" name="name" placeholder="How should we call you?" required />
+              </label>
+              <label>
+                <span>Email address</span>
+                <input type="email" name="email" placeholder="you@example.com" required />
+              </label>
+            </div>
+            <label>
+              <span>What are you thinking?</span>
+              <select name="project" required>
+                <option value="" disabled selected>Choose a starting point</option>
+                <option>Brand identity</option>
+                <option>Website or digital experience</option>
+                <option>Creative partnership</option>
+                <option>A bit of everything</option>
+              </select>
+            </label>
+            <label>
+              <span>A little more about it</span>
+              <textarea name="message" rows="3" placeholder="The early thoughts, the big dreams, the little details..." required></textarea>
+            </label>
+            <button class="submit-button" type="submit">Send a little hello <span aria-hidden="true">↗</span></button>
+            <p class="form-note">No pressure, no pitch deck. Just a real conversation.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-wrap">
+      <a class="wordmark" href="#top">Calume<span>®</span></a>
+      <p>Good work, with good people.</p>
+      <a href="mailto:hello@calume.studio">hello@calume.studio <span aria-hidden="true">↗</span></a>
+      <span class="copyright">© Calume Studio 2026</span>
+    </footer>
+  </body>
+</html>
+
+<script>
+  const menuToggle = document.querySelector<HTMLButtonElement>(".menu-toggle");
+  const primaryNav = document.querySelector<HTMLElement>(".primary-nav");
+
+  menuToggle?.addEventListener("click", () => {
+    const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+    menuToggle.setAttribute("aria-expanded", String(!isOpen));
+    menuToggle.setAttribute("aria-label", isOpen ? "Open navigation" : "Close navigation");
+    primaryNav?.classList.toggle("is-open", !isOpen);
+  });
+
+  document.querySelectorAll<HTMLButtonElement>(".gallery-control").forEach((button) => {
+    button.addEventListener("click", () => {
+      const direction = Number(button.dataset.direction);
+      document.querySelector(".gallery-track")?.scrollBy({
+        left: direction * window.innerWidth * 0.72,
+        behavior: "smooth",
+      });
+    });
+  });
+
+  const contactImage = document.querySelector<HTMLImageElement>(".contact-image");
+  const contactImageWrap = document.querySelector<HTMLElement>(".contact-image-wrap");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let parallaxFrame = 0;
+
+  const updateContactParallax = () => {
+    parallaxFrame = 0;
+    if (!contactImage || !contactImageWrap) return;
+
+    if (reducedMotion.matches) {
+      contactImage.style.setProperty("--parallax-y", "0px");
+      return;
+    }
+
+    const bounds = contactImageWrap.getBoundingClientRect();
+    const distanceFromCenter =
+      (window.innerHeight / 2 - (bounds.top + bounds.height / 2)) /
+      (window.innerHeight / 2 + bounds.height / 2);
+    const offset = Math.max(-28, Math.min(28, distanceFromCenter * 28));
+    contactImage.style.setProperty("--parallax-y", `${offset.toFixed(1)}px`);
+  };
+
+  const scheduleContactParallax = () => {
+    if (parallaxFrame === 0) {
+      parallaxFrame = window.requestAnimationFrame(updateContactParallax);
+    }
+  };
+
+  window.addEventListener("scroll", scheduleContactParallax, { passive: true });
+  window.addEventListener("resize", scheduleContactParallax);
+  reducedMotion.addEventListener("change", scheduleContactParallax);
+  scheduleContactParallax();
+</script>
