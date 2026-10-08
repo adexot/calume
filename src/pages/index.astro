@@ -135,12 +135,58 @@ const gallery = [
         <span class="hero-caption">Good hair, good energy, always.</span>
       </section>
 
+      <section class="collection-section" id="collection" aria-labelledby="collection-title">
+        <div class="collection-track" aria-label="Selected Calume hair looks" tabindex="0">
+          <div class="collection-intro">
+            <div class="collection-index">
+              <span>01</span>
+              <span class="collection-index__rule" aria-hidden="true"></span>
+              <span>AW26</span>
+            </div>
+            <h2 id="collection-title">My work</h2>
+            <p class="collection-season">Hair, in its element.</p>
+            <div class="collection-intro__bottom">
+              <p>A study of shape, texture, and the quiet confidence of hair that feels like you.</p>
+              <div class="collection-controls" aria-label="Collection controls">
+                <button class="collection-control" type="button" data-direction="-1" aria-label="Scroll collection left">←</button>
+                <button class="collection-control" type="button" data-direction="1" aria-label="Scroll collection right">→</button>
+              </div>
+            </div>
+          </div>
+
+          {gallery.map((item, index) => (
+            <>
+              <figure class="collection-look">
+                <img src={item.image} alt={item.alt} loading="lazy" />
+                <span class="collection-look__number">0{index + 1} / 05</span>
+                <figcaption>
+                  <span class="collection-look__detail">{item.detail}</span>
+                  <span class="collection-look__title">{item.title}</span>
+                </figcaption>
+              </figure>
+              {index === 0 && (
+                <article class="collection-record">
+                  <p class="collection-record__label">A note on the collection</p>
+                  <h3>Good hair<br />has room<br /><em>to move.</em></h3>
+                  <div class="collection-record__details">
+                    <p><span>Shape</span> Soft lines, made personal.</p>
+                    <p><span>Feeling</span> Easy to wear, lovely to live in.</p>
+                  </div>
+                  <a class="collection-record__link" href="#services">Find your service <span aria-hidden="true">↗</span></a>
+                </article>
+              )}
+            </>
+          ))}
+        </div>
+        <p class="collection-hint">Scroll to explore <span aria-hidden="true">⟶</span></p>
+      </section>
+
       <section class="services" id="services">
         <div class="services-inner">
           <div class="section-heading services-heading" data-reveal>
             <div>
               <p class="eyebrow"><span></span> What I do</p>
-              <h2>Good hair,<br /><em>your way.</em></h2>
+              <h2>Services,<br /><em>your way.</em></h2>
             </div>
             <p class="section-intro">
               Thoughtful cuts, personal colour, and feel-good styling shaped around you.
@@ -179,7 +225,7 @@ const gallery = [
         <div class="section-wrap gallery-heading" data-reveal>
           <div>
             <p class="eyebrow"><span></span> A little hair inspiration</p>
-            <h2>Made with care.<br /><em>Worn with joy.</em></h2>
+            <h2>Good hair.<br /><em>Worn with joy.</em></h2>
           </div>
           <div class="gallery-controls" aria-label="Gallery controls">
             <button class="gallery-control" type="button" data-direction="-1" aria-label="Scroll gallery left">←</button>
@@ -241,11 +287,19 @@ const gallery = [
           </form>
         </div>
       </section>
-    <footer class="site-footer section-wrap">
-      <a class="wordmark" href="#top">Calume<span>®</span></a>
-      <p>Good hair, and a little time for you.</p>
-      <a href="mailto:hello@calume.studio">Say hello <span aria-hidden="true">↗</span></a>
-      <span class="copyright">© Calume Studio 2026</span>
+    <footer class="site-footer" aria-label="Footer">
+      <div class="site-footer__top">
+        <a class="site-footer__brand" href="#top" aria-label="Calume home">
+          <span>Calume</span><span class="site-footer__brand-dot" aria-hidden="true">.</span>
+        </a>
+
+        <nav class="site-footer__nav" aria-label="Footer navigation">
+          <a href="#gallery">Works</a>
+          <a href="#services">Process</a>
+          <a href="#contact">Studio</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
     </footer>
     </main>
   </body>
@@ -266,6 +320,16 @@ const gallery = [
     button.addEventListener("click", () => {
       const direction = Number(button.dataset.direction);
       document.querySelector(".gallery-track")?.scrollBy({
+        left: direction * window.innerWidth * 0.72,
+        behavior: "smooth",
+      });
+    });
+  });
+
+  document.querySelectorAll<HTMLButtonElement>(".collection-control").forEach((button) => {
+    button.addEventListener("click", () => {
+      const direction = Number(button.dataset.direction);
+      document.querySelector(".collection-track")?.scrollBy({
         left: direction * window.innerWidth * 0.72,
         behavior: "smooth",
       });
