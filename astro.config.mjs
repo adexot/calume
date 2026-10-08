@@ -5,4 +5,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  site: 'https://adexot.github.io',
+  base: '/calume',
 });
