@@ -923,7 +923,8 @@ button {
 .contact-form textarea {
   width: 100%;
   padding: 11px 12px;
-  border: 1px solid var(--line);
+  border: 0;
+  border-bottom: 1px solid var(--line);
   border-radius: 0;
   outline: none;
   color: var(--ink);
@@ -1170,6 +1171,7 @@ button {
   }
 
   .hero {
+    width: 100%;
     min-height: min(700px, calc(100svh - 68px));
     min-height: max(560px, min(700px, calc(100svh - 68px)));
   }
@@ -1185,7 +1187,7 @@ button {
 
   .hero-copy {
     width: 100%;
-    padding: 90px 0 32px;
+    padding: 90px 22px 32px;
   }
 
   .hero h1 {
@@ -1585,7 +1587,7 @@ button {
   }
 
   .contact-image-wrap {
-    width: 82%;
+    width: 100%;
     height: min(112vw, 410px);
   }
 
