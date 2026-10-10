@@ -1,73 +1,124 @@
 ---
-import "../styles/global.css";
+import '../styles/global.css';
+import heroVideo from '../media/hero.mp4';
+import contactPortrait from '../media/work6.mov';
+import hair1 from '../media/hair1.jpeg';
+import hair2 from '../media/hair2.jpeg';
+import hair3 from '../media/hair3.jpeg';
+import bridalServiceImage from '../media/service_bridal.jpeg';
+import hairServiceImage from '../media/service_hair.jpeg';
+import wigServiceImage from '../media/service_wig.jpeg';
+import hairCollectionServiceImage from '../media/service_hair_collection.jpeg';
+import work1 from '../media/work1.jpeg';
+import work2 from '../media/work2.jpeg';
+import work3 from '../media/work3.jpeg';
+import work4 from '../media/work4.jpeg';
+import work5 from '../media/work5.jpeg';
+import work6Video from '../media/work6.mov';
 
 const services = [
   {
-    number: "01",
-    name: "Hair services",
-    detail: "Service price list",
-    className: "service-card--lilac",
+    number: '01',
+    name: 'Hair services',
+    detail: 'Service price list',
+    className: 'service-card--lilac',
+    image: hairServiceImage,
   },
   {
-    number: "02",
-    name: "Wig Services",
-    detail: "Service price list",
-    className: "service-card--peach",
+    number: '02',
+    name: 'Wig Services',
+    detail: 'Service price list',
+    className: 'service-card--peach',
+    image: wigServiceImage,
   },
   {
-    number: "03",
-    name: "Bridal collection",
-    detail: "Styled with care, for your special day",
-    className: "service-card--blue",
+    number: '03',
+    name: 'Bridal collection',
+    detail: 'Styled with care, for your special day',
+    className: 'service-card--blue',
+    image: bridalServiceImage,
   },
   {
-    number: "04",
-    name: "Hair collection",
-    detail: "Beautiful hair for your big day",
-    className: "service-card--yellow",
+    number: '04',
+    name: 'Hair collection',
+    detail: 'Beautiful hair for your big day',
+    className: 'service-card--yellow',
+    image: hairCollectionServiceImage,
   },
 ];
 
-const gallery = [
+const workLooks = [
   {
-    image:
-      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=85",
-    alt: "Soft, glossy brunette hair styled in loose waves",
-    className: "gallery-item--one",
-    title: "Soft shape",
-    detail: "Cut & finish",
+    image: work1,
+    video: undefined,
+    videoAlt: undefined,
+    alt: 'Finished hairstyle from the Calume work collection',
+    title: 'Soft shape',
+    detail: 'Cut & finish',
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=85",
-    alt: "Portrait with warm, dimensional caramel tones",
-    className: "gallery-item--two",
-    title: "Golden hour",
-    detail: "Balayage",
+    image: work2,
+    video: undefined,
+    videoAlt: undefined,
+    alt: 'Finished hairstyle from the Calume work collection',
+    title: 'Everyday ease',
+    detail: 'Style & finish',
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=900&q=85",
-    alt: "Natural curls with defined shape and movement",
-    className: "gallery-item--three",
-    title: "All the texture",
-    detail: "Curl shaping",
+    image: work3,
+    video: undefined,
+    videoAlt: undefined,
+    alt: 'Finished hairstyle from the Calume work collection',
+    title: 'A fresh shape',
+    detail: 'Cut & style',
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=85",
-    alt: "A fresh, effortless style with face-framing layers",
-    className: "gallery-item--four",
-    title: "A little lighter",
-    detail: "Layers & tone",
+    image: work4,
+    video: undefined,
+    videoAlt: undefined,
+    alt: 'Finished hairstyle from the Calume work collection',
+    title: 'The occasion',
+    detail: 'Event styling',
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=85",
-    alt: "Editorial beauty look with a polished, modern finish",
-    className: "gallery-item--five",
-    title: "The occasion",
-    detail: "Event styling",
+    image: work5,
+    video: undefined,
+    videoAlt: undefined,
+    alt: 'Finished hairstyle from the Calume work collection',
+    title: 'The final touch',
+    detail: 'Finishing',
+  },
+  {
+    image: work5,
+    video: work6Video,
+    videoAlt: 'A Calume styling video from the work collection',
+    alt: 'Preview of a Calume styling video',
+    title: 'In motion',
+    detail: 'Watch the finish',
+  },
+];
+
+const hairGallery = [
+  {
+    image: hair1,
+    alt: 'Long, glossy waves with a soft, defined shape',
+    className: 'gallery-item--one',
+    title: 'Soft shape',
+    detail: 'Cut & finish',
+  },
+  {
+    image: hair2,
+    alt: 'A softly styled look with polished, flowing waves',
+    className: 'gallery-item--two',
+    title: 'Everyday ease',
+    detail: 'Style & finish',
+  },
+  {
+    image: hair3,
+    alt: 'A smooth, shaped hairstyle with glossy movement',
+    className: 'gallery-item--three',
+    title: 'A fresh shape',
+    detail: 'Cut & style',
   },
 ];
 ---
@@ -92,13 +143,17 @@ const gallery = [
   </head>
   <body>
     <header class="site-header">
-      <a class="wordmark" href="#top" aria-label="Calume home">Calume<span>®</span></a>
+      <a class="wordmark" href="#top" aria-label="Calume home"
+        >Calume<span>®</span></a
+      >
       <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
         <a href="#services">Hair services</a>
         <a href="#gallery">My work</a>
         <a href="#contact">About & booking</a>
       </nav>
-      <a class="header-cta" href="#contact-me">Book a visit <span aria-hidden="true">↗</span></a>
+      <a class="header-cta" href="#contact-me"
+        >Book a visit <span aria-hidden="true">↗</span></a
+      >
       <button
         class="menu-toggle"
         type="button"
@@ -113,21 +168,38 @@ const gallery = [
 
     <main id="top">
       <section class="hero" aria-label="Calume hair stylist">
-        <img
+        <video
           class="hero-image"
-          src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=2200&q=90"
-          alt="A beautiful, softly styled brunette look"
-          fetchpriority="high"
-        />
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          aria-hidden="true"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
         <div class="hero-shade"></div>
         <div class="hero-copy" data-reveal="hero">
-          <p class="eyebrow hero-eyebrow"><span></span> Independent hair artist · cut & colour</p>
+          <p class="eyebrow hero-eyebrow">
+            <span></span> Independent hair artist · cut & colour
+          </p>
           <h1>Hair that feels<br /><em>like you.</em></h1>
           <div class="hero-bottom">
-            <p>Thoughtful cuts, lived-in colour and feel-good hair for wherever life takes you.</p>
-            <a class="round-link hero-play" href="#gallery" aria-label="Explore my work">
+            <p>
+              Thoughtful cuts, lived-in colour and feel-good hair for wherever
+              life takes you.
+            </p>
+            <a
+              class="round-link hero-play"
+              href="#gallery"
+              aria-label="Explore my work"
+            >
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.5" />
+                <path
+                  d="M5 12h14m-6-6 6 6-6 6"
+                  stroke="currentColor"
+                  stroke-width="1.5"></path>
               </svg>
             </a>
           </div>
@@ -135,8 +207,16 @@ const gallery = [
         <span class="hero-caption">Good hair, good energy, always.</span>
       </section>
 
-      <section class="collection-section" id="collection" aria-labelledby="collection-title">
-        <div class="collection-track" aria-label="Selected Calume hair looks" tabindex="0">
+      <section
+        class="collection-section"
+        id="work"
+        aria-labelledby="collection-title"
+      >
+        <div
+          class="collection-track"
+          aria-label="Selected Calume hair looks"
+          tabindex="0"
+        >
           <div class="collection-intro">
             <div class="collection-index">
               <span>01</span>
@@ -146,39 +226,90 @@ const gallery = [
             <h2 id="collection-title">My work</h2>
             <p class="collection-season">Hair, in its element.</p>
             <div class="collection-intro__bottom">
-              <p>A study of shape, texture, and the quiet confidence of hair that feels like you.</p>
+              <p>
+                A study of shape, texture, and the quiet confidence of hair that
+                feels like you.
+              </p>
               <div class="collection-controls" aria-label="Collection controls">
-                <button class="collection-control" type="button" data-direction="-1" aria-label="Scroll collection left">←</button>
-                <button class="collection-control" type="button" data-direction="1" aria-label="Scroll collection right">→</button>
+                <button
+                  class="collection-control"
+                  type="button"
+                  data-direction="-1"
+                  aria-label="Scroll collection left">←</button
+                >
+                <button
+                  class="collection-control"
+                  type="button"
+                  data-direction="1"
+                  aria-label="Scroll collection right">→</button
+                >
               </div>
             </div>
           </div>
 
-          {gallery.map((item, index) => (
-            <>
-              <figure class="collection-look">
-                <img src={item.image} alt={item.alt} loading="lazy" />
-                <span class="collection-look__number">0{index + 1} / 05</span>
-                <figcaption>
-                  <span class="collection-look__detail">{item.detail}</span>
-                  <span class="collection-look__title">{item.title}</span>
-                </figcaption>
-              </figure>
-              {index === 0 && (
-                <article class="collection-record">
-                  <p class="collection-record__label">A note on the collection</p>
-                  <h3>Good hair<br />has room<br /><em>to move.</em></h3>
-                  <div class="collection-record__details">
-                    <p><span>Shape</span> Soft lines, made personal.</p>
-                    <p><span>Feeling</span> Easy to wear, lovely to live in.</p>
-                  </div>
-                  <a class="collection-record__link" href="#services">Find your service <span aria-hidden="true">↗</span></a>
-                </article>
-              )}
-            </>
-          ))}
+          {
+            workLooks.map((item, index) => (
+              <>
+                <figure
+                  class:list={[
+                    'collection-look',
+                    item.video && 'collection-look--video',
+                  ]}
+                >
+                  {item.video ? (
+                    <video
+                      controls
+                      playsinline
+                      preload="none"
+                      poster={item.image.src}
+                      aria-label={item.videoAlt}
+                    >
+                      <source src={item.video} type="video/quicktime" />
+                    </video>
+                  ) : (
+                    <img src={item.image.src} alt={item.alt} loading="lazy" />
+                  )}
+                  <span class="collection-look__number">
+                    {String(index + 1).padStart(2, '0')} /{' '}
+                    {String(workLooks.length).padStart(2, '0')}
+                  </span>
+                  <figcaption>
+                    <span class="collection-look__detail">{item.detail}</span>
+                    <span class="collection-look__title">{item.title}</span>
+                  </figcaption>
+                </figure>
+                {index === 0 && (
+                  <article class="collection-record">
+                    <p class="collection-record__label">
+                      A note on the collection
+                    </p>
+                    <h3>
+                      Good hair
+                      <br />
+                      has room
+                      <br />
+                      <em>to move.</em>
+                    </h3>
+                    <div class="collection-record__details">
+                      <p>
+                        <span>Shape</span> Soft lines, made personal.
+                      </p>
+                      <p>
+                        <span>Feeling</span> Easy to wear, lovely to live in.
+                      </p>
+                    </div>
+                    <a class="collection-record__link" href="#services">
+                      Find your service <span aria-hidden="true">↗</span>
+                    </a>
+                  </article>
+                )}
+              </>
+            ))
+          }
         </div>
-        <p class="collection-hint">Scroll to explore <span aria-hidden="true">⟶</span></p>
+        <p class="collection-hint">
+          Scroll to explore <span aria-hidden="true">⟶</span>
+        </p>
       </section>
 
       <section class="services" id="services">
@@ -189,66 +320,126 @@ const gallery = [
               <h2>Services,<br /><em>your way.</em></h2>
             </div>
             <p class="section-intro">
-              Thoughtful cuts, personal colour, and feel-good styling shaped around you.
+              Thoughtful cuts, personal colour, and feel-good styling shaped
+              around you.
             </p>
           </div>
           <div class="service-grid">
             <div class="service-stack service-stack--left">
-              {[services[0], services[2]].map((service) => (
-                <a class={`service-card ${service.className}`} href="#contact" data-reveal style={`--reveal-delay: ${Number(service.number) * 90}ms`}>
-                  <span class="service-number">{service.number}</span>
-                  <span class="service-arrow" aria-hidden="true">↗</span>
-                  <span class="service-copy">
-                    <span class="service-title">{service.name}</span>
-                    <span class="service-detail">{service.detail}</span>
-                  </span>
-                </a>
-              ))}
+              {
+                [services[0], services[2]].map((service) => (
+                  <a
+                    class:list={['service-card', service.className, service.image && 'service-card--image']}
+                    href="#contact"
+                    data-reveal
+                    style={`--reveal-delay: ${Number(service.number) * 90}ms`}
+                  >
+                    {service.image && (
+                      <img
+                        class="service-card__image"
+                        src={service.image.src}
+                        alt=""
+                        loading="lazy"
+                      />
+                    )}
+                    <span class="service-number">{service.number}</span>
+                    <span class="service-arrow" aria-hidden="true">
+                      ↗
+                    </span>
+                    <span class="service-copy">
+                      <span class="service-title">{service.name}</span>
+                      <span class="service-detail">{service.detail}</span>
+                    </span>
+                  </a>
+                ))
+              }
             </div>
             <div class="service-stack service-stack--right">
-              {[services[1], services[3]].map((service) => (
-                <a class={`service-card ${service.className}`} href="#contact" data-reveal style={`--reveal-delay: ${Number(service.number) * 90}ms`}>
-                  <span class="service-number">{service.number}</span>
-                  <span class="service-arrow" aria-hidden="true">↗</span>
-                  <span class="service-copy">
-                    <span class="service-title">{service.name}</span>
-                    <span class="service-detail">{service.detail}</span>
-                  </span>
-                </a>
-              ))}
+              {
+                [services[1], services[3]].map((service) => (
+                  <a
+                    class:list={['service-card', service.className, service.image && 'service-card--image']}
+                    href="#contact"
+                    data-reveal
+                    style={`--reveal-delay: ${Number(service.number) * 90}ms`}
+                  >
+                    {service.image && (
+                      <img
+                        class="service-card__image"
+                        src={service.image.src}
+                        alt=""
+                        loading="lazy"
+                      />
+                    )}
+                    <span class="service-number">{service.number}</span>
+                    <span class="service-arrow" aria-hidden="true">
+                      ↗
+                    </span>
+                    <span class="service-copy">
+                      <span class="service-title">{service.name}</span>
+                      <span class="service-detail">{service.detail}</span>
+                    </span>
+                  </a>
+                ))
+              }
             </div>
           </div>
         </div>
       </section>
 
-      <section class="gallery-section" id="gallery">
+      <section class="gallery-section" id="hairs">
         <div class="section-wrap gallery-heading" data-reveal>
           <div>
             <p class="eyebrow"><span></span> A little hair inspiration</p>
             <h2>Good hair.<br /><em>Worn with joy.</em></h2>
           </div>
           <div class="gallery-controls" aria-label="Gallery controls">
-            <button class="gallery-control" type="button" data-direction="-1" aria-label="Scroll gallery left">←</button>
-            <button class="gallery-control" type="button" data-direction="1" aria-label="Scroll gallery right">→</button>
+            <button
+              class="gallery-control"
+              type="button"
+              data-direction="-1"
+              aria-label="Scroll gallery left">←</button
+            >
+            <button
+              class="gallery-control"
+              type="button"
+              data-direction="1"
+              aria-label="Scroll gallery right">→</button
+            >
           </div>
         </div>
         <div class="gallery-track" aria-label="Selected hair styling work">
-          {gallery.map((item, index) => (
-            <figure class={`gallery-item ${item.className}`} data-reveal style={`--reveal-delay: ${index * 70}ms`}>
-              <img src={item.image} alt={item.alt} loading="lazy" />
-              <figcaption><span>{item.title} <i>· {item.detail}</i></span><span>0{index + 1}</span></figcaption>
-            </figure>
-          ))}
+          {
+            hairGallery.map((item, index) => (
+              <figure
+                class={`gallery-item ${item.className}`}
+                data-reveal
+                style={`--reveal-delay: ${index * 70}ms`}
+              >
+                <img src={item.image.src} alt={item.alt} loading="lazy" />
+                <figcaption>
+                  <>
+                    <span>
+                      {item.title} <i>· {item.detail}</i>
+                    </span>
+                    <span>{String(index + 1).padStart(2, '0')}</span>
+                  </>
+                </figcaption>
+              </figure>
+            ))
+          }
         </div>
-        <p class="gallery-hint section-wrap">Scroll for a little more inspiration <span aria-hidden="true">⟶</span></p>
+        <p class="gallery-hint section-wrap">
+          Scroll for a little more inspiration <span aria-hidden="true">⟶</span>
+        </p>
       </section>
 
       <section class="contact section-wrap" id="contact">
         <div class="contact-image-wrap" data-reveal>
           <img
             class="contact-image"
-            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1100&q=85"
-            alt="A relaxed portrait in warm, natural light"
+            src={contactPortrait.src}
+            alt="A softly sculpted, glossy hairstyle"
             loading="lazy"
           />
           <span class="image-note">Come as you are. Leave feeling lovely.</span>
@@ -256,22 +447,41 @@ const gallery = [
         <div class="contact-content" data-reveal>
           <p class="eyebrow"><span></span> A little time for you</p>
           <h2>Your next<br />good hair <em>day.</em></h2>
-          <p class="contact-intro" id="contact-me">Tell me what your hair is dreaming of. I’ll be in touch to find a time that works.</p>
-          <form class="contact-form" action="mailto:hello@calume.studio" method="post" enctype="text/plain">
+          <p class="contact-intro" id="contact-me">
+            Tell me what your hair is dreaming of. I’ll be in touch to find a
+            time that works.
+          </p>
+          <form
+            class="contact-form"
+            action="mailto:hello@calume.studio"
+            method="post"
+            enctype="text/plain"
+          >
             <div class="form-row">
               <label>
                 <span>Your name</span>
-                <input type="text" name="name" placeholder="How should I call you?" required />
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="How should I call you?"
+                  required
+                />
               </label>
               <label>
                 <span>Email address</span>
-                <input type="email" name="email" placeholder="you@example.com" required />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="you@example.com"
+                  required
+                />
               </label>
             </div>
             <label>
               <span>What would you love?</span>
               <select name="project" required>
-                <option value="" disabled selected>Choose a hair service</option>
+                <option value="" disabled selected>Choose a hair service</option
+                >
                 <option>Cut & finish</option>
                 <option>Colour</option>
                 <option>Curl consultation</option>
@@ -280,65 +490,87 @@ const gallery = [
             </label>
             <label>
               <span>Your hair story</span>
-              <textarea name="message" rows="3" placeholder="Anything you’d like me to know? Your hopes, your hair history, all welcome." required></textarea>
+              <textarea
+                name="message"
+                rows="3"
+                placeholder="Anything you’d like me to know? Your hopes, your hair history, all welcome."
+                required></textarea>
             </label>
-            <button class="submit-button" type="submit">Ask about an appointment <span aria-hidden="true">↗</span></button>
-            <p class="form-note">No pressure. Just a friendly first chat about your hair.</p>
+            <button class="submit-button" type="submit"
+              >Ask about an appointment <span aria-hidden="true">↗</span
+              ></button
+            >
+            <p class="form-note">
+              No pressure. Just a friendly first chat about your hair.
+            </p>
           </form>
         </div>
       </section>
-    <footer class="site-footer" aria-label="Footer">
-      <div class="site-footer__top">
-        <a class="site-footer__brand" href="#top" aria-label="Calume home">
-          <span>Calume</span><span class="site-footer__brand-dot" aria-hidden="true">.</span>
-        </a>
+      <footer class="site-footer" aria-label="Footer">
+        <div class="site-footer__top">
+          <a class="site-footer__brand" href="#top" aria-label="Calume home">
+            <span>Calume</span><span
+              class="site-footer__brand-dot"
+              aria-hidden="true">.</span
+            >
+          </a>
 
-        <nav class="site-footer__nav" aria-label="Footer navigation">
-          <a href="#gallery">Works</a>
-          <a href="#services">Process</a>
-          <a href="#contact">Studio</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-    </footer>
+          <nav class="site-footer__nav" aria-label="Footer navigation">
+            <a href="#gallery">Works</a>
+            <a href="#services">Process</a>
+            <a href="#contact">Studio</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+      </footer>
     </main>
   </body>
 </html>
 
 <script>
-  const menuToggle = document.querySelector<HTMLButtonElement>(".menu-toggle");
-  const primaryNav = document.querySelector<HTMLElement>(".primary-nav");
+  const menuToggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+  const primaryNav = document.querySelector<HTMLElement>('.primary-nav');
 
-  menuToggle?.addEventListener("click", () => {
-    const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
-    menuToggle.setAttribute("aria-expanded", String(!isOpen));
-    menuToggle.setAttribute("aria-label", isOpen ? "Open navigation" : "Close navigation");
-    primaryNav?.classList.toggle("is-open", !isOpen);
+  menuToggle?.addEventListener('click', () => {
+    const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', String(!isOpen));
+    menuToggle.setAttribute(
+      'aria-label',
+      isOpen ? 'Open navigation' : 'Close navigation',
+    );
+    primaryNav?.classList.toggle('is-open', !isOpen);
   });
 
-  document.querySelectorAll<HTMLButtonElement>(".gallery-control").forEach((button) => {
-    button.addEventListener("click", () => {
-      const direction = Number(button.dataset.direction);
-      document.querySelector(".gallery-track")?.scrollBy({
-        left: direction * window.innerWidth * 0.72,
-        behavior: "smooth",
+  document
+    .querySelectorAll<HTMLButtonElement>('.gallery-control')
+    .forEach((button) => {
+      button.addEventListener('click', () => {
+        const direction = Number(button.dataset.direction);
+        document.querySelector('.gallery-track')?.scrollBy({
+          left: direction * window.innerWidth * 0.72,
+          behavior: 'smooth',
+        });
       });
     });
-  });
 
-  document.querySelectorAll<HTMLButtonElement>(".collection-control").forEach((button) => {
-    button.addEventListener("click", () => {
-      const direction = Number(button.dataset.direction);
-      document.querySelector(".collection-track")?.scrollBy({
-        left: direction * window.innerWidth * 0.72,
-        behavior: "smooth",
+  document
+    .querySelectorAll<HTMLButtonElement>('.collection-control')
+    .forEach((button) => {
+      button.addEventListener('click', () => {
+        const direction = Number(button.dataset.direction);
+        document.querySelector('.collection-track')?.scrollBy({
+          left: direction * window.innerWidth * 0.72,
+          behavior: 'smooth',
+        });
       });
     });
-  });
 
-  const contactImage = document.querySelector<HTMLImageElement>(".contact-image");
-  const contactImageWrap = document.querySelector<HTMLElement>(".contact-image-wrap");
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const contactImage =
+    document.querySelector<HTMLImageElement>('.contact-image');
+  const contactImageWrap = document.querySelector<HTMLElement>(
+    '.contact-image-wrap',
+  );
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let parallaxFrame = 0;
 
   const updateContactParallax = () => {
@@ -346,7 +578,7 @@ const gallery = [
     if (!contactImage || !contactImageWrap) return;
 
     if (reducedMotion.matches) {
-      contactImage.style.setProperty("--parallax-y", "0px");
+      contactImage.style.setProperty('--parallax-y', '0px');
       return;
     }
 
@@ -355,7 +587,7 @@ const gallery = [
       (window.innerHeight / 2 - (bounds.top + bounds.height / 2)) /
       (window.innerHeight / 2 + bounds.height / 2);
     const offset = Math.max(-28, Math.min(28, distanceFromCenter * 28));
-    contactImage.style.setProperty("--parallax-y", `${offset.toFixed(1)}px`);
+    contactImage.style.setProperty('--parallax-y', `${offset.toFixed(1)}px`);
   };
 
   const scheduleContactParallax = () => {
@@ -364,26 +596,28 @@ const gallery = [
     }
   };
 
-  window.addEventListener("scroll", scheduleContactParallax, { passive: true });
-  window.addEventListener("resize", scheduleContactParallax);
-  reducedMotion.addEventListener("change", scheduleContactParallax);
+  window.addEventListener('scroll', scheduleContactParallax, { passive: true });
+  window.addEventListener('resize', scheduleContactParallax);
+  reducedMotion.addEventListener('change', scheduleContactParallax);
   scheduleContactParallax();
 
-  if (!reducedMotion.matches && "IntersectionObserver" in window) {
+  if (!reducedMotion.matches && 'IntersectionObserver' in window) {
     const revealObserver = new IntersectionObserver(
       (entries, observer) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
-          entry.target.classList.add("is-revealed");
+          entry.target.classList.add('is-revealed');
           observer.unobserve(entry.target);
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -35px 0px" },
+      { threshold: 0.12, rootMargin: '0px 0px -35px 0px' },
     );
 
-    document.querySelectorAll<HTMLElement>("[data-reveal]").forEach((element) => {
-      element.classList.add("reveal-pending");
-      revealObserver.observe(element);
-    });
+    document
+      .querySelectorAll<HTMLElement>('[data-reveal]')
+      .forEach((element) => {
+        element.classList.add('reveal-pending');
+        revealObserver.observe(element);
+      });
   }
 </script>
